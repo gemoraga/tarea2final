@@ -1,12 +1,14 @@
 class ApiController < ApplicationController
 protect_from_forgery except: :index
+require 'json'
   def buscar
+    status = 200
     tag = params.require(:tag)
     access_token = params.require(:access_token)
     puts tag
-    respond_to do |format|
-        format.html { redirect_to buscar, notice: 'Player was successfully created.' }
-        format.json { render metadata: 'hola', post: 'chao'}
-    end
+    render :status => status, json: {
+      metadata: 'hola',
+      posts: 'chao'
+    }
   end
 end
