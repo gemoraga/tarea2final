@@ -1,5 +1,5 @@
 # Database config
 test:
   adapter: postgresql
-  database: tarea2ti_test
+  database: tarea2final_test
   username: postgres
