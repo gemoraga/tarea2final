@@ -13,7 +13,7 @@ require 'rest-client'
     cantidadPosts = datos["media_count"]
     render :status => status, json: {
       metadata: cantidadPosts,
-      posts: 'chao'
+      posts: 'chao',
       version: '1.1.0'
     }
   end
