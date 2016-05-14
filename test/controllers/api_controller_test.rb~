@@ -15,4 +15,5 @@ class ApiControllerTest < ActionController::TestCase
   test "buscar exige parámetro access_token" do
   post :buscar, tag: 'futbol'
   assert_response 400
+  end
 end
