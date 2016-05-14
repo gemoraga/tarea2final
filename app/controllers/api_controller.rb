@@ -6,9 +6,6 @@ require 'rest-client'
     status = 200
     begin
     tag = params.require(:tag)
-    rescue
-    render :status => 400
-    end
     access_token = params.require(:access_token)
     respuesta = RestClient.get 'https://api.instagram.com/v1/tags/' + tag.to_s + '?access_token=' + access_token.to_s, :content_type => 'application/json'
     respuestaParseada = JSON.parse respuesta
@@ -40,5 +37,8 @@ require 'rest-client'
       posts: posts2,
       version: '1.2.0'
     }
+  rescue
+  render :status => 400
+  end
   end
 end
