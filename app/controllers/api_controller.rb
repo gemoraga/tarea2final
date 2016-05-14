@@ -35,7 +35,7 @@ require 'rest-client'
     render :status => status, json: {
       metadata: {total: cantidadPosts},
       posts: posts2,
-      version: '1.2.0'
+      version: '1.3.0'
     }
   rescue
   render :status => 400
