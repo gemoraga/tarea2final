@@ -6,14 +6,15 @@ require 'rest-client'
     status = 200
     tag = params.require(:tag)
     access_token = params.require(:access_token)
-    puts tag
     respuesta = RestClient.get 'https://api.instagram.com/v1/tags/' + tag.to_s + '?access_token=' + access_token.to_s, :content_type => 'application/json'
     respuestaParseada = JSON.parse respuesta
-    datos = respuesta["data"]
+    datos = respuestaParseada["data"]
     cantidadPosts = datos["media_count"]
+    puts datos
+    puts cantidadPosts
     render :status => status, json: {
-      metadata: cantidadPosts,
-      posts: 'chao'
+      metadata: {total: cantidadPosts},
+      posts: 'chao',
       version: '1.1.0'
     }
   end

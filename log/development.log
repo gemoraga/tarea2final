@@ -3220,3 +3220,48 @@ SyntaxError (/home/grone/tarea2final/app/controllers/api_controller.rb:17: synta
   Rendered /home/grone/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
   Rendered /home/grone/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
   Rendered /home/grone/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (227.7ms)
+
+
+Started POST "/instagram/tag/buscar" for 127.0.0.1 at 2016-05-13 22:26:20 -0400
+Processing by ApiController#buscar as */*
+  Parameters: {"tag"=>"santiago", "access_token"=>"2019746130.59a3f2b.86a0135240404ed5b908a14c0a2d9402"}
+Can't verify CSRF token authenticity
+Completed 200 OK in 1074ms (Views: 1.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/instagram/tag/buscar" for 127.0.0.1 at 2016-05-13 22:29:28 -0400
+Processing by ApiController#buscar as */*
+  Parameters: {"tag"=>"santiago", "access_token"=>"2019746130.59a3f2b.86a0135240404ed5b908a14c0a2d9402"}
+Can't verify CSRF token authenticity
+Completed 500 Internal Server Error in 441ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `[]' for nil:NilClass):
+  app/controllers/api_controller.rb:12:in `buscar'
+
+
+  Rendered /home/grone/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.5ms)
+  Rendered /home/grone/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.5ms)
+  Rendered /home/grone/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /home/grone/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (56.3ms)
+  Rendered /home/grone/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /home/grone/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/grone/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/grone/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/grone/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (100.3ms)
+  Rendered /home/grone/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/grone/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /home/grone/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (192.9ms)
+
+
+Started POST "/instagram/tag/buscar" for 127.0.0.1 at 2016-05-13 22:30:20 -0400
+Processing by ApiController#buscar as */*
+  Parameters: {"tag"=>"santiago", "access_token"=>"2019746130.59a3f2b.86a0135240404ed5b908a14c0a2d9402"}
+Can't verify CSRF token authenticity
+Completed 200 OK in 747ms (Views: 0.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/instagram/tag/buscar" for 127.0.0.1 at 2016-05-13 22:38:30 -0400
+Processing by ApiController#buscar as */*
+  Parameters: {"tag"=>"santiago", "access_token"=>"2019746130.59a3f2b.86a0135240404ed5b908a14c0a2d9402"}
+Can't verify CSRF token authenticity
+Completed 200 OK in 529ms (Views: 0.9ms | ActiveRecord: 0.0ms)
