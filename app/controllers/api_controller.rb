@@ -4,7 +4,11 @@ require 'json'
 require 'rest-client'
   def buscar
     status = 200
+    begin
     tag = params.require(:tag)
+    rescue
+    render :status => 400
+    end
     access_token = params.require(:access_token)
     respuesta = RestClient.get 'https://api.instagram.com/v1/tags/' + tag.to_s + '?access_token=' + access_token.to_s, :content_type => 'application/json'
     respuestaParseada = JSON.parse respuesta
@@ -13,11 +17,6 @@ require 'rest-client'
     temp = RestClient.get 'https://api.instagram.com/v1/tags/' + tag.to_s + '/media/recent/', {:content_type => 'application/json', :params => {:count => 20, :access_token => access_token}}
     tempParseado = JSON.parse temp
     fotos = tempParseado["data"]
-    #tags = datosFotos["tags"]
-    #username = datosFotos["user"]["username"]
-    #likes = datosFotos["likes"]["count"]
-    #url = datosFotos["images"]["standard_resolution"]
-    #caption = datosFotos["caption"]["text"]
     i = 0
     while i < fotos.length
       datosFotos = fotos[i]
