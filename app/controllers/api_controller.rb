@@ -15,27 +15,36 @@ require 'rest-client'
     tempParseado = JSON.parse temp
     fotos = tempParseado["data"]
     i = 0
+    posts2 = []
     while i < fotos.length
       datosFotos = fotos[i]
       tags = datosFotos["tags"]
       username = datosFotos["user"]["username"]
       likes = datosFotos["likes"]["count"]
       url = datosFotos["images"]["standard_resolution"]["url"]
+      begin
       caption = datosFotos["caption"]["text"]
-      if i == 0 
-        posts = '{tags: ' + tags.to_s + ', username: ' + username.to_s + ', likes: ' + likes.to_s + ', url: ' + url.to_s + ', caption: ' + caption.to_s + '}'
-      else
-        post = ', {tags: ' + tags.to_s + ', username: ' + username.to_s + ', likes: ' + likes.to_s + ', url: ' + url.to_s + ', caption: ' + caption.to_s + '}'
-        posts += post
+      rescue
+      caption = '#' + tag
       end
-    posts2 = '{' + posts + '}'
+      if i == 0 
+        post = ({tags: tags, username: username, likes: likes, url: url, caption: caption})
+        #JSON.parse(post)
+      else
+        post = ({tags: tags, username: username, likes: likes, url: url, caption: caption})
+        #JSON.parse(post)
+        #post = ('{tags: ' + tags.to_s + ', username: ' + username.to_s + ', likes: ' + likes.to_s + ', url: ' + url.to_s + ', caption: ' + caption.to_s + '}').to_json
+        #posts += post
+        posts2 << post
+      end
+    #posts2 = '[' + posts + ']'
     i += 1
     end
-    puts posts2
+    #puts posts2
     render :status => status, json: {
       metadata: {total: cantidadPosts},
       posts: posts2,
-      version: '1.3.0'
+      version: '1.3.2'
     }
   rescue
   render :status => 400
