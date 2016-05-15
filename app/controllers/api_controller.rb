@@ -4,7 +4,7 @@ require 'json'
 require 'rest-client'
   def buscar
     status = 200
-    #begin
+    begin
     tag = params.require(:tag)
     access_token = params.require(:access_token)
     respuesta = RestClient.get 'https://api.instagram.com/v1/tags/' + tag.to_s + '?access_token=' + access_token.to_s, :content_type => 'application/json'
@@ -44,10 +44,10 @@ require 'rest-client'
     render :status => status, json: {
       metadata: {total: cantidadPosts},
       posts: posts2,
-      version: '1.3.1'
+      version: '1.3.2'
     }
-  #rescue
-  #render :status => 400
-  #end
+  rescue
+  render :status => 400
+  end
   end
 end

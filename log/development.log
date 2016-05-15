@@ -4447,3 +4447,10 @@ Processing by ApiController#buscar as */*
   Parameters: {"tag"=>"santiago", "access_token"=>"2019746130.59a3f2b.86a0135240404ed5b908a14c0a2d9402"}
 Can't verify CSRF token authenticity
 Completed 200 OK in 1336ms (Views: 38.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/instagram/tag/buscar" for 127.0.0.1 at 2016-05-15 16:27:43 -0400
+Processing by ApiController#buscar as */*
+  Parameters: {"tag"=>"santiago", "access_token"=>"2019746130.59a3f2b.86a0135240404ed5b908a14c0a2d9402"}
+Can't verify CSRF token authenticity
+Completed 200 OK in 1189ms (Views: 6.4ms | ActiveRecord: 0.0ms)
