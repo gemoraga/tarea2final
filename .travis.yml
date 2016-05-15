@@ -6,4 +6,8 @@ services:
 before_script:
   - psql -c 'create database tarea2final_test;' -U postgres
   - cp config/database.yml.travis config/database.yml
-
+deploy:
+  provider: heroku
+  app: tarea2final
+  api_key:
+    secure: "da82a26e-2ef8-425a-99e0-4a5fe62ee114"
